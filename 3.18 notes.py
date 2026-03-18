@@ -44,7 +44,7 @@ def print_day_trash(n):
 
 
 def print_day(n):
-    print (["monday","tuesday","wednesday","thursday","friday","saturday","sunday"][n%7])
+    print (["monday","tuesday","wednesday","thursday","friday","saturday","sunday"][n%7-1])
 
 def leap(year):
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
@@ -90,7 +90,13 @@ another question: count days between two valid date d1m1y1 and d2m2y2
 def count_days(d1,m1,y1,d2,m2,y2):
     return days_total(d2,m2,y2)-days_total(d1,m1,y1)
 
+"""
+homework: 8 friends order their favorite dished at a round table, could rotate the table to at least 2 of them get their dishes
 
+well we didn't have to use code to explain this, simple as it seem. A round table contian 8 angles (I mean there are 8 angles to rotate) and the first angle doesn't fit anyone,
+so, the 8 people's favorite dish must be achieved from the the left 7 angles, and that means, there exists one rotate satisfied at least 2 people
+EZPZ :D
+"""
 
 
 

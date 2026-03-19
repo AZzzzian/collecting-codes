@@ -27,7 +27,10 @@ def count_seconds(s1,m1,h1,s2,m2,h2):
     return time2-time1
 
 def count_seconds_further_days(s1,m1,h1,s2,m2,h2):
-    return count_seconds(s1,m1,h1,s2,m2,h2+24)
+    if count_seconds(s1,m1,h1,s2,m2,h2) > 0:
+        return count_seconds(s1,m1,h1,s2,m2,h2)
+    else：
+        return count_seconds(s1,m1,h1,s2,m2,h2+24)
 
 """
 test line

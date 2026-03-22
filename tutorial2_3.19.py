@@ -32,6 +32,10 @@ def count_seconds_further_days(s1,m1,h1,s2,m2,h2):
     else：
         return count_seconds(s1,m1,h1,s2,m2,h2+24)
 
+# or another way to do this, no matter whether they are in the same day
+def count_seconds_both(s1,m1,h1,s2,m2,h2):
+    return count_seconds(s1,m1,h1,s2,m2,h2+24) %86400
+
 """
 test line
 """

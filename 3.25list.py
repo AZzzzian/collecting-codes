@@ -33,19 +33,14 @@ def rotate(array):
     new.append(array[0])
     return new
 def rotate_right(array):
-    i=1
+    i=0
     current=array[0]
     while i!=len(array):
         temp=array[(i+1)%len(array)]
         array[(i+1)%len(array)]=current
         current=temp
         i=i+1
-# def switch(array):
-#     return array[-1],array[0]
-# def rotate_1(array):
-#     array[0],array[-1]=switch(array)
-#     return array
-#
+
 
 
 print(rotate([1,2,1,3,9,4,8,6,5,0]))

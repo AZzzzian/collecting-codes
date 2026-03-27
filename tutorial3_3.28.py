@@ -80,6 +80,79 @@ def pick_zero_right(array):
     return array
 
 """
+well i guess you'd like to see another way out
+here is the other code, avoiding too much loop
+
+[2,4,6,0,-1,4,-3,9,0]
+[0,4,6,0,-1,4,-3,9,2]
+[0,9,6,0,-1,4,-3,4,2]
+[0,-3,6,0,-1,4,9,4,2]
+
+if u dont understand this, try to divide numbers into 3 groups."<0", "=0" and ">0" 
+"""
+def sort(array):
+    high=len(array)-1
+    mid=0
+    slow=0
+    while mid<=high:
+        if array[mid]<0:
+            array[slow],array[mid]=array[mid],array[slow]
+            mid=mid+1
+            slow=slow+1
+        elif array[mid]==0:
+            mid = mid + 1
+        else:
+            array[high], array[mid] = array[mid], array[high]
+            high = high - 1
+    return array
+
+"""
+just changing the group will be enough
+"""
+def sort_pick0(array):
+    high = len(array) - 1
+    mid = 0
+    slow = 0
+    while mid <= high:
+        if array[mid] < 0:
+            array[slow], array[mid] = array[mid], array[slow]
+            mid = mid + 1
+            slow = slow + 1
+        elif array[mid] > 0:
+            mid = mid + 1
+        else:
+            array[high], array[mid] = array[mid], array[high]
+            high = high - 1
+    return array
+
+"""
+also, 3 pointers will be stressful to understanding this, we can use 2 pointers
+"""
+def sort_pointer2(array):
+    left=0
+    mid=0
+    while mid != len(array):
+        if array[mid] < 0:
+            array[left], array[mid] = array[mid], array[left]
+            left = left + 1
+            mid = mid + 1
+        else:
+            mid = mid + 1
+# ofcourse I'm not necessary using else here, but it's more able to understand
+# now we got all negative numbers left side, then we process right side
+    right=len(array)-1
+    mid=0
+    while mid <= right:
+        if array[mid] > 0:
+            array[right], array[mid] = array[mid], array[right]
+            right = right - 1
+        else:
+            mid = mid + 1
+    return array
+"""
+so the last question ez as it seems now, i not gonna write it again, just changing the "group" will be enough
+"""
+"""
 test
 """
 

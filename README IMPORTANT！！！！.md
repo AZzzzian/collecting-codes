@@ -5,7 +5,7 @@ I have copied down as much of Henry's code as possible. Of course, some of the c
 I can guarantee that the code with a clear source indication is 100% Henry's content. However, for the rest of the code, 
 I may have made adjustments for better aesthetics, tidiness, or to make it more reference-worthy. 
 Therefore, I cannot guarantee that copying my code verbatim will satisfy Henry. In short, this is a disclaimer. 
-I hope you have the ability to distinguish and pay attention to the statements that Henry explicitly prohibited in class, such as "for".
+I hope you have the ability to distinguish and pay attention to the sentences that Henry explicitly prohibited in class, such as "for".
 Thank you for your understanding.
 
 如果你要通过这个库学习笔记，请一定要读完这部分内容

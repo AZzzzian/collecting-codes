@@ -1,6 +1,10 @@
 import random
 
-
+"""
+q1:
+Suppose you have a 100 element array which contains values, Write a program to decide if the 
+array is sorted in ascending order
+"""
 def create_more0_array():
     i = 0
     random_list = []
@@ -20,7 +24,12 @@ def decide_ascending_array(array):
             return False
         i=i+1
     return True
-
+"""
+q2:
+Suppose you have a 100 element array which contains numbers. Write a program that will 
+rearrange the values so that all of the negative values appear before all of the zeros and all of the 
+zeros appear before all of the positive values
+"""
 def sort_array(array):
     i=0
     while i!=len(array)-1:
@@ -31,8 +40,15 @@ def sort_array(array):
             j=j+1
         i=i+1
     return array
-
+"""
+q3:
+Suppose you have a 100 element array called f which contains numbers. Write a program to 
+rearrange the values in f so that all the non zero values are moved to the start of f and all the zero 
+values are moved to the end of f. The non zero values must still be in the order in which they were 
+at the beginning.
+"""
 def pick_zero(array):
+
     i=0
     x=0
     while i!=len(array):
@@ -45,7 +61,7 @@ def pick_zero(array):
     return new
 
 """
-codes downside is without using new list, i pack these2 process( pick 0 and sort) into a new function
+codes downside here are function without creating new list, i pack these2 process( pick 0 and sort) into a new function
 """
 
 def pick_zero_right(array):
@@ -107,7 +123,7 @@ def sort(array):
     return array
 
 """
-just changing the group will be enough
+just changing the group will be enough to solve both q2 and q3
 """
 def sort_pick0(array):
     high = len(array) - 1
@@ -126,7 +142,7 @@ def sort_pick0(array):
     return array
 
 """
-also, 3 pointers will be stressful to understanding this, we can use 2 pointers
+also, 3 pointers will be stressful dealing this, we can use 2 pointers
 """
 def sort_pointer2(array):
     left=0
@@ -152,19 +168,61 @@ def sort_pointer2(array):
 """
 so the last question ez as it seems now, i not gonna write it again, just changing the "group" will be enough
 """
+
+"""
+4.1
+henry's codes i wrote down here
+"""
+def array_swap(g,i1,i2):
+    g[i1], g[i2] = g[i2], g[i1]
+
+def dutch_national_flag(array):
+    i,j,k=0,0,len(array)
+    while j!=k:
+        if array[j]==0:
+            j=j+1
+        elif array[j]<0:
+            array_swap(array, i, j)
+            i,j=i+1,j+1
+        elif array[j]>0:
+            array_swap(array, j, k - 1)
+            k=k-1
+    return array
+def dutch_national_flag_move0(array):
+    i,j,k=0,0,len(array)
+    while j!=k:
+        if array[j]>0:
+            j=j+1
+        elif array[j]<0:
+            array_swap(array, i, j)
+            i,j=i+1,j+1
+        elif array[j]==0:
+            array_swap(array, j, k - 1)
+            k=k-1
+    return array
 """
 test
 """
 
-random_list=create_more0_array()
-print("before:",random_list)
-print()
-print("after:",sort_array(random_list))
-print()
+# random_list1=create_more0_array()
+# print("before:",random_list1)
+# print()
+# print("after:",sort_array(random_list1))
+# print()
+#
+# random_list2=create_more0_array()
+# print("before:",random_list2)
+# print()
+# print("after pick 0:",pick_zero(random_list2))
+# print()
+# print(pick_zero_right(random_list2))
 
-random_list=create_more0_array()
-print("before:",random_list)
+random_list3=create_more0_array()
+print("before:",random_list3)
 print()
-print("after pick 0:",pick_zero(random_list))
+print("after:",dutch_national_flag(random_list3))
+
+random_list4=create_more0_array()
+print("before:",random_list4)
 print()
-print(pick_zero_right(random_list))
+print("after:",dutch_national_flag_move0(random_list4))

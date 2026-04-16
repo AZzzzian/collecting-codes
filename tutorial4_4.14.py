@@ -1,68 +1,5 @@
-def calculate(num):
-    if num == 0:
-        return 1
-    else:
-        return num * calculate(num-1)
-
-def decide_special(n):
-    if n == 0:
-        return 0
-    else:
-        return n == calculate(n%10) + decide_special(n//10)
-
-def cal_difference(x,num):
-    return (num - x)**2
-
-def find_index(x,array):
-    i=0
-    index = 0
-    dif=cal_difference(x,array[i])
-    while i!=len(array):
-        if cal_difference(x,array[i])<dif:
-            dif=cal_difference(x,array[i])
-            index=i
-        i=i+1
-    return index
-
-def reverse_part(array,i1,i2):
-    i=0
-    while i!=(i2-i1+1)//2:
-        array[i1+i],array[i2-i]=array[i2-i],array[i1+i]
-        i=i+1
-    return array
-
-def decide_reverse_index(array):
-    i=1
-    index1=0
-    index2=len(array)-1
-    while i!=len(array)-3:
-        if array[i]<array[i+1] and array[i-1]<array[i]:
-            index2=i
-        if array[i]>array[i+1] and array[i-1]<array[i]:
-            index1=i
-        i=i+1
-    re_array=reverse_part(array,index1,index2)
-    print(re_array)
-
-def decide_is_ascending(array):
-    i=0
-    while i!=len(array) and array[i]<array[i-1]:
-        i=i+1
-    return array[i]<array[i-1]
-
-
-
-
-
-# print(calculate(5))
-# print(decide_special(145))
-# print(find_index(97,[1,2,3,45,100,6,9,99,77,44]))
-array2=[0,1,2,6,5,4,3,7,8,9]
-decide_reverse_index(array2)
-print(decide_is_ascending(array2))
-
-#
-"q1"
+#H's code, he didnt show answer for q0 
+"q1:Given f, a 100 element array containing integers, and x an integer, find the index i in f where f[i] is closest to x."
 def difference(x,y):
     if x<=y:
         return y-x
@@ -76,7 +13,8 @@ def closest_index(f,x):
         i=i+1
     print(best)
 
-"q2 i increasing part, j decreasing, k increasing "
+"q2:Given f, a 100 element array containing integers, write a program to decide if f could be sorted in ascending order just by reversing a part of f "
+"i means increasing part, j decreasing, k increasing, maybe you can draw a line map to see it "
 def dae(f):
     i,j,k=0,0,99
     while j!=k and f[i]<f[i+1]:
@@ -107,7 +45,9 @@ def dae(f):
             return False
 
 
-"q3: s means enter time, e means leave time"
+"q3:We have 2 100 element arrays of positive integers, s and e."
+" These records the time that people entered and left the library on a particular day.
+"So person i entered at time s[i] and left at time e[i]. We are told that the array s is sorted in ascending order.  s means enter time, e means leave time"
 def library_people(e,s):
     i=0
     latest=0
@@ -123,7 +63,7 @@ def library_people(e,s):
     print(total)
 
 
-"not in tutorial, O(log(n))"
+"this is not in tutorial, a Bisection method didnt more than O(log(n))"
 def odd(n):
     return n%2 != 0
 def even(n):
@@ -136,6 +76,8 @@ def find_odd_and_even(f):
             i=h
         elif even(f[h]):
             j=h
+
+"i am still working on the last problem he gave us"
 
 
 

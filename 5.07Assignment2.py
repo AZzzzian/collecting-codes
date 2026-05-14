@@ -5,7 +5,8 @@
 9 10 11 12
 """
 
-# I have retained the content written previously, and also add the method you showed me before
+# 请注意，这里展示的是我写的内容和Herry的内容，其中下面的写class的部分是我写的，仅供参考，Herry希望我们写的方式我写在函数，名为“another”的函数
+# 但因为我有点懒，所以两种方法我都写进类里了，不过不影响理解
 
 class Array:
     def __init__(self,n,m):#generate array
